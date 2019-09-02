@@ -9,8 +9,8 @@ It has so far been tested on ubuntu and tinker board os.
 
 ## Scheduling
 The script is scheduled using cron with the following crontab:<br/>
-    0 22 * * mon,tue,wed,thu,fri turn-off-wifi.sh<br/>
+    0 22 * * mon,tue,wed,thu turn-off-wifi.sh<br/>
     30 14 * * mon,tue,wed,thu,fri turn-on-wifi.sh<br/>
-    0 0 * * sat,sun turn-off-wifi.sh<br/>
+    0 0 * * fri,sat,sun turn-off-wifi.sh<br/>
     0 8 * * sat,sun turn-on-wifi.sh<br/>
  
