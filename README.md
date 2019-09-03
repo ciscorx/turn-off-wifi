@@ -1,5 +1,9 @@
 # turn-off-wifi
+Here's a script, which when executed from a computer connect to the local LAN network, logs into the at&t u-verse router via its web interface to disables or enables its wifi. 
+
 My sister asked me to schedule her at&t u-verse router's wifi so that it would turn off during the night and on during the day in order that her son wouldn't be using it late at night.  It's sad that the router doesnt already come with such a feature.
+
+
 
 ## Requirements
 This script runs in linux and requires emacs with a version number of probably at least 23.3.1 and the latest emacs-w3m package.
