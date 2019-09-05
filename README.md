@@ -9,7 +9,7 @@ My sister asked me to schedule her at&t u-verse router's wifi so that it would t
 This script runs in linux and requires emacs with a version number of probably at least 23.3.1 and the latest emacs-w3m package.
 Also required is pp.el, the pretty print function from https://github.com/typester/emacs/blob/master/lisp/emacs-lisp/pp.el
 
-It has so far been tested on ubuntu and tinker board os.
+It has so far been tested on ubuntu 12.04 and debian stretch on tinker board.
 
 ## Scheduling
 The script is scheduled using cron with the following crontab:<br/>
