@@ -16,12 +16,17 @@ versions prior to 21 won't inherit the `dafault' face colors by default,
 we will use this value for the default `defface' color spec.  Lifted from http://wal.sh/code/elisp/trunk/medew/site-lisp/w3m/w3m-util.el")
 
 (defcustom w3m-use-japanese-menu nil "dont use this")
+;; Variables and functions which are used in the following inline
+;; functions.  They should be defined in the other module at run-time.
+
+(add-to-list 'load-path "~/.emacs.d/emacs-w3m")
 
 (load-file "~/.emacs.d/pp.el")  ;; pretty print, found at https://github.com/typester/emacs/blob/master/lisp/emacs-lisp/pp.el
 
-;; many of these are not actually required
 (add-to-list 'load-path "~/.emacs.d/emacs-w3m")
 ;(add-to-list 'load-path "~/.emacs.d/apel-10.8/")
+
+;; many of these are not actually required
 (load-file "~/.emacs.d/emacs-w3m/w3m-util.el")
 (load-file "~/.emacs.d/emacs-w3m/w3m-ccl.el")
 (load-file "~/.emacs.d/emacs-w3m/w3m-proc.el")
@@ -57,10 +62,10 @@ we will use this value for the default `defface' color spec.  Lifted from http:/
 (load-file "~/.emacs.d/emacs-w3m/w3m-tabmenu.el")
 (load-file "~/.emacs.d/emacs-w3m/w3m-weather.el")
 
-(load-file "~/.emacs.d/emacs-w3m/octet.el")
+;(load-file "~/.emacs.d/emacs-w3m/octet.el")
 ;(load-file "~/.emacs.d/mime_stuff/mime-def.el")
 ;(load-file "~/.emacs.d/mime_stuff/mime-parse.el")
-(load-file "~/.emacs.d/emacs-w3m/mime-w3m.el")
+;(load-file "~/.emacs.d/emacs-w3m/mime-w3m.el")
 
 (load-file "~/.emacs.d/emacs-w3m/w3m.el")
 
@@ -68,13 +73,13 @@ we will use this value for the default `defface' color spec.  Lifted from http:/
 
 
 
-(defcustom w3m-password "default"
+(defcustom w3m-password "mypasswordblahblah"
   "or some other"
   :type 'string
   )
-(setq w3m-password "default")
+(setq w3m-password "mypasswordblahblah")
 
-(defcustom w3m-selval "default"
+(defcustom w3m-selval "mytextblahblah"
   "or some other"
   :type 'string
   )

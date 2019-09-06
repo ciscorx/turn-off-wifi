@@ -5,30 +5,37 @@
 
 
 (defun ciscorx/login_wifi ()
+  "login, waiting a maximum of 20 seconds for login page to appear"
   (interactive)
-  (w3m-browse-url "http://192.168.1.254/xslt?PAGE=C_2_1c")
-  (sleep-for 7)
-  (goto-char (point-min))
-;  (while (not (looking-at "Location"))
- ; (sleep-for 3)
-					;  )
-  
-  (if (re-search-forward "Device access code required." nil t)
-      (progn
-	(goto-char (point-min))
-	(sleep-for 2)
-	(w3m-next-anchor 5)  ;; goto password field
-	(sleep-for 7)
-	(w3m-view-this-url)  ;; submit password 
-	(sleep-for 7)
-	(w3m-next-anchor 1)  ;; goto submit button
-	(sleep-for 4)
-	(w3m-view-this-url)  ;; submit password for login
-	)
+  (let ((counter 0) (max 20))
+    (w3m-browse-url "http://192.168.1.254/xslt?PAGE=C_2_1c")
+    (sleep-for 1)
     (goto-char (point-min))
+    (while (and
+	    (not (looking-at "Location"))
+	    (< counter max))
+      (goto-char (point-min))
+      (sleep-for 1)
+      (setq counter (1+ counter))
+      )
+    
+    (if (re-search-forward "Device access code required." nil t)
+	(progn
+	  (goto-char (point-min))
+	  (sleep-for 2)
+	  (w3m-next-anchor 5)  ;; goto password field
+	  (sleep-for 2)
+	  (w3m-view-this-url)  ;; submit password 
+	  (sleep-for 2)
+	  (w3m-next-anchor 1)  ;; goto submit button
+	  (sleep-for 2)
+	  (w3m-view-this-url)  ;; submit password for login
+	  )
+      (goto-char (point-min))
+      )
     )
   )
- 
+
 (defun ciscorx/goto-nex (arg)
   "Jumps to the nth next w3m anchor"
   (interactive "P")
@@ -42,7 +49,7 @@
   (cancel-timer ciscorx/runobj)
   (if (re-search-forward "2.4 GHz Wi-Fi Radio Configuration" nil t)
       (progn
-	(sleep-for 15)
+	(sleep-for 2)
 	(goto-char (point-min))
 	(sleep-for 2)
 	(w3m-next-anchor 17) 
@@ -51,15 +58,15 @@
 	(sleep-for 2)
 	(w3m-view-this-url)
 	
-	(sleep-for 8)
+	(sleep-for 4)
 	(w3m-next-anchor 7) 
 ;  (goto-char 1206)            ;; wifi0 network
 	(sleep-for 2)
 	(setq w3m-selval "DISABLE")
-	(sleep-for 1)
+	(sleep-for 2)
 	(w3m-view-this-url)
 
-	(sleep-for 6)
+	(sleep-for 4)
 	(goto-char (point-max))
 	(w3m-next-anchor -2)
 	(sleep-for 2)
@@ -67,7 +74,7 @@
 	)
     (goto-char (point-min))
     )
-  (sleep-for 20)
+  (sleep-for 30)
   (save-buffers-kill-terminal)
   )
 
@@ -77,16 +84,16 @@
   (cancel-timer ciscorx/runobj)
   (if (re-search-forward "2.4 GHz Wi-Fi Radio Configuration" nil t)
       (progn
-	(sleep-for 15)
+	(sleep-for 2)
 	(goto-char (point-min))
 	(sleep-for 2)
 	(w3m-next-anchor 17) 
-	(sleep-for 2)
+	(sleep-for 4)
 	(setq w3m-selval "ENABLE")  ;; wifi0 config
-	(sleep-for 1)
+	(sleep-for 2)
 	(w3m-view-this-url)
 	
-	(sleep-for 8)
+	(sleep-for 4)
 	(w3m-next-anchor 7) 
 ;  (goto-char 1206)            ;; wifi0 network
 	(sleep-for 2)
@@ -101,7 +108,7 @@
 	)
     (goto-char (point-min))
     )
-  (sleep-for 20)
+  (sleep-for 30)
   (save-buffers-kill-terminal)
   )
 
@@ -118,3 +125,4 @@
 
 
 (ciscorx/en_wifi)
+
