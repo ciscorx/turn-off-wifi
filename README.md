@@ -9,9 +9,9 @@ My sister asked me to schedule her at&t u-verse router's wifi so that it would t
 This script runs in linux and requires w3m and emacs, of a version number of probably at least 23.3.1 and the latest emacs-w3m package.
 Also required is pp.el, the pretty print function from https://github.com/typester/emacs/blob/master/lisp/emacs-lisp/pp.el
 
-It has so far been tested on ubuntu 12.04, debian stretch on tinker board and debian stretch on raspberry pi 3.
+It has so far been tested on ubuntu 12.04, on 20181023-tinker-board-linaro-stretch-alip-v2.0.8.img on asus tinker board and 2018-11-13-raspbian-stretch on raspberry pi 3. 
 
-It fails to run on debian buster, due to its SSL, complaining that "EE certificate key too weak".
+It fails to run on debian buster, due to its SSL, complaining that "EE certificate key too weak".  Also, it fails to work on MS Windows due to the lack of w3m.
 
 ## Scheduling
 The script is scheduled using cron with the following crontab:<br/>
