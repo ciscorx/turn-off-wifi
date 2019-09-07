@@ -11,6 +11,8 @@ Also required is pp.el, the pretty print function from https://github.com/typest
 
 It has so far been tested on ubuntu 12.04, debian stretch on tinker board and debian stretch on raspberry pi 3.
 
+It fails to run on debian buster, due to its SSL, complaining that "EE certificate key too weak".
+
 ## Scheduling
 The script is scheduled using cron with the following crontab:<br/>
     0 22 * * sun,mon,tue,wed,thu turn-off-wifi.sh<br/>
