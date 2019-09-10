@@ -14,9 +14,4 @@ It has so far been tested on ubuntu 12.04, on 20181023-tinker-board-linaro-stret
 It fails to run on debian buster, due to its SSL, complaining that "EE certificate key too weak".  Also, it fails to work on MS Windows due to the lack of w3m.
 
 ## Scheduling
-The script is scheduled using cron with the following crontab:<br/>
-    0 22 * * sun,mon,tue,wed,thu turn-off-wifi.sh<br/>
-    30 14 * * mon,tue,wed,thu,fri turn-on-wifi.sh<br/>
-    0 0 * * fri,sat turn-off-wifi.sh<br/>
-    0 8 * * sat,sun turn-on-wifi.sh<br/>
- 
+I wanted to scheduled the script using cron but it doesnt seem to work.  Perhaps cron requires the script to operate in batch mode. 
