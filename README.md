@@ -14,4 +14,20 @@ It has so far been tested on ubuntu 12.04, on 20181023-tinker-board-linaro-stret
 It fails to run on debian buster, due to its SSL, complaining that "EE certificate key too weak".  Also, it fails to work on MS Windows due to the lack of w3m.
 
 ## Scheduling
-I wanted to scheduled the script using cron but it doesnt seem to work.  Perhaps cron requires the script to operate in batch mode. 
+Raspberry pi 3 simply wouldnt run this script using cron, nor from rc.local nor init.d.  At the end of the day I resorted to running a server process, wifi_scheduler.sh, at startup from lxsession/LXDE-pi/autostart. 
+
+To set up the server:
+* Make a directory with the command mkdir -p ~/.config/lxsession/LXDE-pi/<br/>
+* Copy the /etc/xdg/lxsession/LXDE/autostart to ~/.config/lxsession/LXDE-pi/autostart<br/>
+* Move the file wifi_scheduler.sh to /usr/bin so it can be seen.<br/>
+* Make a directory called /home/pi/scripts and put disable_wifi.el and enable_wifi.el in that directory
+* Edit the new autostart (or just use the autostart file I provided):<br/>
+@lxpanel --profile LXDE-pi<br/>
+@pcmanfm --desktop --profile LXDE-pi<br/>
+#@xscreensaver -no-splash<br/>
+point-rpi<br/>
+@wifi_scheduler.sh<br/>
+
+
+
+
