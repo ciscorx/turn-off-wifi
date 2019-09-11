@@ -21,7 +21,7 @@ To set up the server:
 * Copy the /etc/xdg/lxsession/LXDE/autostart to ~/.config/lxsession/LXDE-pi/autostart<br/>
 * Move the file wifi_scheduler.sh to /usr/bin so it can be seen.<br/>
 * Make a directory called /home/pi/scripts and put disable_wifi.el and enable_wifi.el in that directory
-* Edit the new autostart (or just use the autostart file I provided):<br/>
+* Edit ~/.config/lxsession/LXDE-pi/autostart with the following (or just use the autostart file I provided):<br/>
 @lxpanel --profile LXDE-pi<br/>
 @pcmanfm --desktop --profile LXDE-pi<br/>
 #@xscreensaver -no-splash<br/>
