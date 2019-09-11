@@ -16,7 +16,7 @@ It fails to run on debian buster, due to its SSL, complaining that "EE certifica
 ## Scheduling
 Raspberry pi 3 simply wouldnt run this script using cron, nor from rc.local nor init.d.  At the end of the day I resorted to running a server process, wifi_scheduler.sh, at startup from lxsession/LXDE-pi/autostart. 
 
-To set up the server:
+To set up the server on raspberry pi 3:
 * Make a directory with the command mkdir -p ~/.config/lxsession/LXDE-pi/<br/>
 * Copy the /etc/xdg/lxsession/LXDE/autostart to ~/.config/lxsession/LXDE-pi/autostart<br/>
 * Move the file wifi_scheduler.sh to /usr/bin so it can be seen.<br/>
