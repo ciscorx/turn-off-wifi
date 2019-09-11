@@ -1,5 +1,5 @@
 # turn-off-wifi
-Here's a script which, when executed from a computer connect to the local LAN network, logs into the at&t u-verse router via its web interface to disable or enable its wifi. 
+Here's a script which, when executed from a computer that is connected to the local LAN network, logs into the at&t u-verse router via its web interface to disable or enable its wifi. 
 
 My sister asked me to schedule her at&t u-verse router's wifi so that it would turn off during the night and on during the day in order that her son wouldn't be using it late at night.  It's sad that the router doesn't already come with such a feature.
 
