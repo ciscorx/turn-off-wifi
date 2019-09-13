@@ -3,10 +3,12 @@
 currenttime=$(date +%H:%M)
 currentdayoftheweek=$(date +%a)
 
-## turn on wifi on boot up if current datetime falls on scheduled target
-if ([ "$currenttime" \> "22:00" ] || [ "$currenttime" \< "14:30" ]) && ([ "Mon" = "$currentdayoftheweek" ] || [ "Tue" = "$currentdayoftheweek" ] || [ "Wed" = "$currentdayoftheweek" ] || [ "Thu" = "$currentdayoftheweek" ]); then
+## turn off wifi on boot up if current datetime falls on scheduled target, otherwise turn it on
+if ([ "$currenttime" \> "21:00" ] || [ "$currenttime" \< "14:30" ]) && ([ "Mon" = "$currentdayoftheweek" ] || [ "Tue" = "$currentdayoftheweek" ] || [ "Wed" = "$currentdayoftheweek" ] || [ "Thu" = "$currentdayoftheweek" ]); then
     /usr/bin/emacs24-x -Q -l /home/pi/scripts/disable_wifi.el	
-elif [ "$currenttime" \< "08:00" ] && [ "Sat|Sun" == *"$currentdayoftheweek"* ]; then
+elif [ "$currenttime" \< "14:30" ] && [ "Fri" = "$currentdayoftheweek" ] ; then
+        /usr/bin/emacs24-x -Q -l /home/pi/scripts/disable_wifi.el   
+elif [ "$currenttime" \< "08:00" ] && ([ "Sat" = "$currentdayoftheweek" ] || [ "Sun" = "$currentdayoftheweek" ]); then
     /usr/bin/emacs24-x -Q -l /home/pi/scripts/disable_wifi.el	
 else
     /usr/bin/emacs24-x -Q -l /home/pi/scripts/enable_wifi.el	
@@ -19,7 +21,9 @@ while :; do
     currenttime=$(date +%H:%M)
     currentdayoftheweek=$(date +%a)
     case $currenttime in
-	22:00)
+	00:47)
+	    /usr/bin/emacs24-x -Q -l /home/pi/scripts/disable_wifi.el ;;		    
+	21:00)
 	    case $currentdayoftheweek in		
 		Sun|Mon|Tue|Wed|Thu)
 		    /usr/bin/emacs24-x -Q -l /home/pi/scripts/disable_wifi.el ;;		
