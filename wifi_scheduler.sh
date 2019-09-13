@@ -21,8 +21,6 @@ while :; do
     currenttime=$(date +%H:%M)
     currentdayoftheweek=$(date +%a)
     case $currenttime in
-	00:47)
-	    /usr/bin/emacs24-x -Q -l /home/pi/scripts/disable_wifi.el ;;		    
 	21:00)
 	    case $currentdayoftheweek in		
 		Sun|Mon|Tue|Wed|Thu)
