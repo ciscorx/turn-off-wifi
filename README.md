@@ -15,10 +15,10 @@ It fails to run on debian buster, due to its SSL, complaining that "EE certifica
 
 ## cron scheduling
 
-0 22 * * sun,mon,tue,wed,thu screen -dm emacs -nw -Q -l /home/pi/scripts/disable_wifi.el
-0 15 * * mon,tue,wed,thu,fri screen -dm emacs -nw -Q -l /home/pi/scripts/enable_wifi.el
-0 0 * * fri,sat screen -dm emacs -nw -Q -l /home/pi/scripts/disable_wifi.el
-0 7 * * sat,sun screen -dm emacs -nw -Q -l /home/pi/scripts/enable_wifi.el
+0 22 * * sun,mon,tue,wed,thu screen -dm emacs -nw -Q -l /home/pi/scripts/disable_wifi.el<br/>
+0 15 * * mon,tue,wed,thu,fri screen -dm emacs -nw -Q -l /home/pi/scripts/enable_wifi.el<br/>
+0 0 * * fri,sat screen -dm emacs -nw -Q -l /home/pi/scripts/disable_wifi.el<br/>
+0 7 * * sat,sun screen -dm emacs -nw -Q -l /home/pi/scripts/enable_wifi.el<br/>
 
 
 
