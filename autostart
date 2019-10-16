@@ -1,7 +1,0 @@
-# ~/.config/lxsession/LXDE-pi/autostart
-@lxpanel --profile LXDE
-@pcmanfm --desktop --profile LXDE
-#@xscreensaver -no-splash
-point-rpi
-#@chromium-browser --start-fullscreen --start-maximized https://google.com
-@wifi_scheduler.sh
