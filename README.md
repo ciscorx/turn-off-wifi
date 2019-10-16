@@ -6,7 +6,7 @@ My sister asked me to schedule her at&t u-verse router's wifi so that it would t
 
 
 ## Requirements
-This script runs in linux and requires w3m and emacs, of a version number of probably at least 23.3.1 and the latest emacs-w3m package.
+This script runs in linux and requires w3m, screen, emacs of a version number of probably at least 23.3.1 and the latest emacs-w3m package.
 Also required is pp.el, the pretty print function from https://github.com/typester/emacs/blob/master/lisp/emacs-lisp/pp.el
 
 It has so far been tested on ubuntu 12.04, on 20181023-tinker-board-linaro-stretch-alip-v2.0.8.img on asus tinker board and 2018-11-13-raspbian-stretch on raspberry pi 3. 
