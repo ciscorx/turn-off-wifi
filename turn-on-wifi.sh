@@ -1,1 +1,1 @@
-emacs -Q -l enable_wifi.el
+screen -dm emacs -nw -Q -l ~/enable_wifi.el

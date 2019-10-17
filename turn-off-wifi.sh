@@ -1,1 +1,1 @@
-emacs -Q -l disable_wifi.el
+screen -dm emacs -nw -Q -l ~/disable_wifi.el
