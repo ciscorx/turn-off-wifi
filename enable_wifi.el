@@ -52,7 +52,7 @@
 	(sleep-for 2)
 	(goto-char (point-min))
 	(sleep-for 2)
-	(w3m-next-anchor 17) 
+	(w3m-next-anchor 18) 
 	(sleep-for 4)
 	(setq w3m-selval "DISABLE")  ;; wifi0 config
 	(sleep-for 2)
@@ -87,7 +87,7 @@
 	(sleep-for 2)
 	(goto-char (point-min))
 	(sleep-for 2)
-	(w3m-next-anchor 17) 
+	(w3m-next-anchor 18) 
 	(sleep-for 4)
 	(setq w3m-selval "ENABLE")  ;; wifi0 config
 	(sleep-for 2)
